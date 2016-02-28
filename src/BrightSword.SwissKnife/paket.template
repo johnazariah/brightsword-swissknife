@@ -1,0 +1,23 @@
+type project
+owners
+    John Azariah
+authors 
+    John Azariah
+projectUrl
+    http://github.com/johnazariah/BrightSword.SwissKnife
+iconUrl
+    https://raw.githubusercontent.com/johnazariah/BrightSword.SwissKnife/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/johnazariah/BrightSword.SwissKnife/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    C# classes extensions monad
+summary
+    A collection of general programming utilities
+description
+    A collection of general programming utilities
+
+

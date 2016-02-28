@@ -234,3 +234,8 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+packages/
+docs/output/
+paket-files/
+TestResults.xml
+*.rej

@@ -1,0 +1,16 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BrightSword.Utilities.KeyGenerator.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Realm_UniqueID" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)"> 23 </Value>
+    </Setting>
+    <Setting Name="Server_UniqueID" Type="System.UInt16" Scope="User">
+      <Value Profile="(Default)"> 97 </Value>
+    </Setting>
+    <Setting Name="Application_UniqueID" Type="System.UInt16" Scope="User">
+      <Value Profile="(Default)"> 11 </Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

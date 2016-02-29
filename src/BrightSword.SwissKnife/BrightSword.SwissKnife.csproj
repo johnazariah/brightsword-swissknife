@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0297E49A-8B8C-4055-8799-9FDF7C83237E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BrightSword.SwissKnife</RootNamespace>
+    <AssemblyName>BrightSword.SwissKnife</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\BrightSword.SwissKnife.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Release\BrightSword.SwissKnife.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BitTwiddlerExtensions.cs" />
+    <Compile Include="CodeGenerationUtilities.cs" />
+    <Compile Include="CoerceExtensions.cs" />
+    <Compile Include="AttributeExtensions.cs" />
+    <Compile Include="CommandLineUtilities\CommandLineArgumentHelper.cs" />
+    <Compile Include="CommandLineUtilities\CommandLineApplication.cs" />
+    <Compile Include="CommandLineUtilities\CommandLineApplicationAttribute.cs" />
+    <Compile Include="CommandLineUtilities\CommandLineArgumentAttribute.cs" />
+    <Compile Include="CommandLineUtilities\CommandLineParameterException.cs" />
+    <Compile Include="CommandLineUtilities\ICommandLineParams.cs" />
+    <Compile Include="Disposable.cs" />
+    <Compile Include="Monads\Try.cs" />
+    <Compile Include="Reflection\TypeMemberDiscoverer.cs" />
+    <Compile Include="SequentialGuid.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="Functional.cs" />
+    <Compile Include="Monads\MonadExtensions.cs" />
+    <Compile Include="ObjectDescriber.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="TimedOperation\ITimedOperationObserver.cs" />
+    <Compile Include="TimedOperation\TimedOperationExtensions.cs" />
+    <Compile Include="TimedOperation\TimedResult.cs" />
+    <Compile Include="TimedOperation\TraceObserver.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="UniqueSequenceGenerator.cs" />
+    <Compile Include="Validator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

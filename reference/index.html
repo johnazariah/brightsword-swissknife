@@ -47,10 +47,12 @@
           <td class="type-name">
             <a href="brightsword-swissknife-attributeextensions.html">AttributeExtensions</a>
           </td>
-          <td class="xmldoc"><p>Extension methods to simplify and streamline operations with Attributes on members (Methods, Properties and
-Fields).</p>
-
-</td>
+          <td class="xmldoc">UNRESOLVED(!:http://swissknife.codeplex.com/)</br><p class='summary'>
+                Extension methods to simplify and streamline operations with Attributes on members (Methods, Properties and
+                Fields).
+            </p><h2>Remarks</h2><p class='remarks'>
+                This code is made available for open-source use at http://swissknife.codeplex.com/
+            </p></td>
         </tr>
         <tr>
           <td class="type-name">
@@ -68,36 +70,38 @@ Fields).</p>
           <td class="type-name">
             <a href="brightsword-swissknife-coerceextensions.html">CoerceExtensions</a>
           </td>
-          <td class="xmldoc"><p>Extension methods to coerce loosely-typed object values into a strictly specified type</p>
-
-</td>
+          <td class="xmldoc">UNRESOLVED(!:http://swissknife.codeplex.com/)</br><p class='summary'>
+                Extension methods to coerce loosely-typed object values into a strictly specified type
+            </p><h2>Remarks</h2><p class='remarks'>
+                This code is made available for open-source use at http://swissknife.codeplex.com/
+            </p></td>
         </tr>
         <tr>
           <td class="type-name">
             <a href="brightsword-swissknife-commandlineapplication.html">CommandLineApplication</a>
           </td>
-          <td class="xmldoc"><p>A static container for command-line processing extension methods.</p>
-
-</td>
+          <td class="xmldoc"></br><p class='summary'>
+                A static container for command-line processing extension methods.
+            </p></td>
         </tr>
         <tr>
           <td class="type-name">
             <a href="brightsword-swissknife-commandlineapplicationattribute.html">CommandLineApplicationAttribute</a>
           </td>
-          <td class="xmldoc"><p>Use this attribute to mark up the struct or class which encapsulates the command line parameters of the
-application.</p>
-
-</td>
+          <td class="xmldoc"></br><p class='summary'>
+                Use this attribute to mark up the struct or class which encapsulates the command line parameters of the
+                application.
+            </p></td>
         </tr>
         <tr>
           <td class="type-name">
             <a href="brightsword-swissknife-commandlineargumentattribute.html">CommandLineArgumentAttribute</a>
           </td>
-          <td class="xmldoc"><p>Use this attribute to mark individual properties on an implementation of ICommandLineParams. This is used to bind
-command-line parameters provided to individual, strongly-typed properties on the object. This attribute can mark up
-either properties (suggested usage) or fields (legacy style)</p>
-
-</td>
+          <td class="xmldoc"></br><p class='summary'>
+                Use this attribute to mark individual properties on an implementation of ICommandLineParams. This is used to bind
+                command-line parameters provided to individual, strongly-typed properties on the object. This attribute can mark up
+                either properties (suggested usage) or fields (legacy style)
+            </p></td>
         </tr>
         <tr>
           <td class="type-name">
@@ -109,10 +113,10 @@ either properties (suggested usage) or fields (legacy style)</p>
           <td class="type-name">
             <a href="brightsword-swissknife-commandlineparameterexception.html">CommandLineParameterException</a>
           </td>
-          <td class="xmldoc"><p>Throw an instance of this, or a derived, exception to signal the unsuitability of a user-supplied command line
-parameter value</p>
-
-</td>
+          <td class="xmldoc"></br><p class='summary'>
+                Throw an instance of this, or a derived, exception to signal the unsuitability of a user-supplied command line
+                parameter value
+            </p></td>
         </tr>
         <tr>
           <td class="type-name">
@@ -136,9 +140,9 @@ parameter value</p>
           <td class="type-name">
             <a href="brightsword-swissknife-icommandlineparams.html">ICommandLineParams</a>
           </td>
-          <td class="xmldoc"><p>Marker interface for classes which represent command line parameters</p>
-
-</td>
+          <td class="xmldoc"></br><p class='summary'>
+                Marker interface for classes which represent command line parameters
+            </p></td>
         </tr>
         <tr>
           <td class="type-name">
@@ -168,20 +172,20 @@ parameter value</p>
           <td class="type-name">
             <a href="brightsword-swissknife-sequentialguid.html">SequentialGuid</a>
           </td>
-          <td class="xmldoc"><p>A sequential guid generator.
-We want to generate an ID which is unique across servers and also monotonically increasing, so that performance
-as a database primary key will be better than that of a truly unique Guid, without requiring the database to
-generate the primary key.
-The first 64 bytes of the Guid will be configured to be unique to an execution context consisting of a Realm,
-Server and Application.
-The next 8 bytes will be configured from a timestamp.
-The default behaviour of the key generator ensures that the Realm, Server and Application are set-up by default the
-very first time
-a context is used. It then ensures that the same values are used even after server reboots.
-If desired, any or all of the context values can be forced to specific values. These values would then be used even
-after the server reboots.</p>
-
-</td>
+          <td class="xmldoc"></br><p class='summary'>
+                A sequential guid generator.
+                We want to generate an ID which is unique across servers and also monotonically increasing, so that performance
+                as a database primary key will be better than that of a truly unique Guid, without requiring the database to
+                generate the primary key.
+                The first 64 bytes of the Guid will be configured to be unique to an execution context consisting of a Realm,
+                Server and Application.
+                The next 8 bytes will be configured from a timestamp.
+                The default behaviour of the key generator ensures that the Realm, Server and Application are set-up by default the
+                very first time
+                a context is used. It then ensures that the same values are used even after server reboots.
+                If desired, any or all of the context values can be forced to specific values. These values would then be used even
+                after the server reboots.
+            </p></td>
         </tr>
         <tr>
           <td class="type-name">

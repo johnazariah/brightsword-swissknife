@@ -40,20 +40,20 @@
   <span>Namespace: BrightSword.SwissKnife</span><br />
 </p>
 <div class="xmldoc">
-<p>A sequential guid generator.
-We want to generate an ID which is unique across servers and also monotonically increasing, so that performance
-as a database primary key will be better than that of a truly unique Guid, without requiring the database to
-generate the primary key.
-The first 64 bytes of the Guid will be configured to be unique to an execution context consisting of a Realm,
-Server and Application.
-The next 8 bytes will be configured from a timestamp.
-The default behaviour of the key generator ensures that the Realm, Server and Application are set-up by default the
-very first time
-a context is used. It then ensures that the same values are used even after server reboots.
-If desired, any or all of the context values can be forced to specific values. These values would then be used even
-after the server reboots.</p>
-
-</div>
+</br><p class='summary'>
+                A sequential guid generator.
+                We want to generate an ID which is unique across servers and also monotonically increasing, so that performance
+                as a database primary key will be better than that of a truly unique Guid, without requiring the database to
+                generate the primary key.
+                The first 64 bytes of the Guid will be configured to be unique to an execution context consisting of a Realm,
+                Server and Application.
+                The next 8 bytes will be configured from a timestamp.
+                The default behaviour of the key generator ensures that the Realm, Server and Application are set-up by default the
+                very first time
+                a context is used. It then ensures that the same values are used even after server reboots.
+                If desired, any or all of the context values can be forced to specific values. These values would then be used even
+                after the server reboots.
+            </p></div>
   <h3>Static members</h3>
   <table class="table table-bordered member-list">
     <thead>
@@ -71,17 +71,17 @@ after the server reboots.</p>
                       </div>
         </td>
         <td class="xmldoc">
-          <p>WARNING!!!
-WARNING!!! Use this method to force the realm, server and application id to known values.
-WARNING!!! The normal method of simply allowing the static initializer to set up random values for the context is
-preferred.
-WARNING!!!
-Generally speaking, this function should ONLY be used when keys generated in one { realm, server, application }
-context
-need to be re-used (perhaps because the server had to be reinstalled and the application needs to be able to resume
-its old sequences)</p>
-
-
+          </br><p class='summary'>
+                WARNING!!!
+                WARNING!!! Use this method to force the realm, server and application id to known values.
+                WARNING!!! The normal method of simply allowing the static initializer to set up random values for the context is
+                preferred.
+                WARNING!!!
+                Generally speaking, this function should ONLY be used when keys generated in one { realm, server, application }
+                context
+                need to be re-used (perhaps because the server had to be reinstalled and the application needs to be able to resume
+                its old sequences)
+            </p>
         </td>
       </tr>
       <tr>

@@ -240,3 +240,4 @@ docs/output/
 paket-files/
 TestResults.xml
 *.rej
+release.cmd

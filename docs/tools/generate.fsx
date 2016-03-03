@@ -101,6 +101,7 @@ let buildReference () =
   MetadataFormat.Generate
     ( binaries, output @@ "reference", layoutRootsAll.["en"],
       parameters = ("root", root)::info,
+      markDownComments = false,
       sourceRepo = githubLink @@ "tree/master",
       sourceFolder = __SOURCE_DIRECTORY__ @@ ".." @@ "..",
       publicOnly = true,libDirs = libDirs )

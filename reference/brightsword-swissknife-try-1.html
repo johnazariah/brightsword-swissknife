@@ -50,39 +50,11 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '93', 93)" onmouseover="showTip(event, '93', 93)">
+          <code onmouseout="hideTip(event, '95', 95)" onmouseover="showTip(event, '95', 95)">
             Bind(action)
           </code>
-          <div class="tip" id="93">
-            <strong>Signature:</strong> action:Action&lt;&#39;T&gt; -&gt; unit<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '94', 94)" onmouseover="showTip(event, '94', 94)">
-            Bind(func)
-          </code>
-          <div class="tip" id="94">
-            <strong>Signature:</strong> func:Func&lt;&#39;T,&#39;U&gt; -&gt; Try&lt;&#39;U&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '95', 95)" onmouseover="showTip(event, '95', 95)">
-            Bind(func, index)
-          </code>
           <div class="tip" id="95">
-            <strong>Signature:</strong> (func:Func&lt;&#39;T,int,&#39;U&gt; * index:int) -&gt; Try&lt;&#39;U&gt;<br />
+            <strong>Signature:</strong> action:Action&lt;&#39;T&gt; -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -93,10 +65,10 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '96', 96)" onmouseover="showTip(event, '96', 96)">
-            BindMany(func)
+            Bind(func)
           </code>
           <div class="tip" id="96">
-            <strong>Signature:</strong> func:Func&lt;&#39;T,IEnumerable&lt;&#39;U&gt;&gt; -&gt; IEnumerable&lt;Try&lt;&#39;U&gt;&gt;<br />
+            <strong>Signature:</strong> func:Func&lt;&#39;T,&#39;U&gt; -&gt; Try&lt;&#39;U&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -107,10 +79,10 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '97', 97)" onmouseover="showTip(event, '97', 97)">
-            Do(action)
+            Bind(func, index)
           </code>
           <div class="tip" id="97">
-            <strong>Signature:</strong> action:Action&lt;&#39;T&gt; -&gt; unit<br />
+            <strong>Signature:</strong> (func:Func&lt;&#39;T,int,&#39;U&gt; * index:int) -&gt; Try&lt;&#39;U&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -121,10 +93,10 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '98', 98)" onmouseover="showTip(event, '98', 98)">
-            GetException()
+            BindMany(func)
           </code>
           <div class="tip" id="98">
-            <strong>Signature:</strong> unit -&gt; exn<br />
+            <strong>Signature:</strong> func:Func&lt;&#39;T,IEnumerable&lt;&#39;U&gt;&gt; -&gt; IEnumerable&lt;Try&lt;&#39;U&gt;&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -135,10 +107,10 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '99', 99)" onmouseover="showTip(event, '99', 99)">
-            GetValueOrDefault(defaultValue)
+            Do(action)
           </code>
           <div class="tip" id="99">
-            <strong>Signature:</strong> defaultValue:&#39;T -&gt; &#39;T<br />
+            <strong>Signature:</strong> action:Action&lt;&#39;T&gt; -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -149,9 +121,37 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '100', 100)" onmouseover="showTip(event, '100', 100)">
-            IsException
+            GetException()
           </code>
           <div class="tip" id="100">
+            <strong>Signature:</strong> unit -&gt; exn<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '101', 101)" onmouseover="showTip(event, '101', 101)">
+            GetValueOrDefault(defaultValue)
+          </code>
+          <div class="tip" id="101">
+            <strong>Signature:</strong> defaultValue:&#39;T -&gt; &#39;T<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '102', 102)" onmouseover="showTip(event, '102', 102)">
+            IsException
+          </code>
+          <div class="tip" id="102">
             <strong>Signature:</strong> bool<br />
                       </div>
         </td>
@@ -170,10 +170,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '101', 101)" onmouseover="showTip(event, '101', 101)">
+          <code onmouseout="hideTip(event, '103', 103)" onmouseover="showTip(event, '103', 103)">
             op_Implicit(value)
           </code>
-          <div class="tip" id="101">
+          <div class="tip" id="103">
             <strong>Signature:</strong> value:&#39;T -&gt; Try&lt;&#39;T&gt;<br />
                       </div>
         </td>
@@ -184,10 +184,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '102', 102)" onmouseover="showTip(event, '102', 102)">
+          <code onmouseout="hideTip(event, '104', 104)" onmouseover="showTip(event, '104', 104)">
             op_Implicit(exception)
           </code>
-          <div class="tip" id="102">
+          <div class="tip" id="104">
             <strong>Signature:</strong> exception:exn -&gt; Try&lt;&#39;T&gt;<br />
                       </div>
         </td>
@@ -198,10 +198,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '103', 103)" onmouseover="showTip(event, '103', 103)">
+          <code onmouseout="hideTip(event, '105', 105)" onmouseover="showTip(event, '105', 105)">
             Unit(function)
           </code>
-          <div class="tip" id="103">
+          <div class="tip" id="105">
             <strong>Signature:</strong> function:Func&lt;&#39;TResult&gt; -&gt; Func&lt;Try&lt;&#39;TResult&gt;&gt;<br />
                       </div>
         </td>
@@ -212,10 +212,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '104', 104)" onmouseover="showTip(event, '104', 104)">
+          <code onmouseout="hideTip(event, '106', 106)" onmouseover="showTip(event, '106', 106)">
             Unit(action)
           </code>
-          <div class="tip" id="104">
+          <div class="tip" id="106">
             <strong>Signature:</strong> action:Action -&gt; Action<br />
                       </div>
         </td>
@@ -226,40 +226,12 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '105', 105)" onmouseover="showTip(event, '105', 105)">
+          <code onmouseout="hideTip(event, '107', 107)" onmouseover="showTip(event, '107', 107)">
             Unit(action)
           </code>
-          <div class="tip" id="105">
+          <div class="tip" id="107">
             <strong>Signature:</strong> action:Action&lt;&#39;TArgument&gt; -&gt; Action&lt;Try&lt;&#39;TArgument&gt;&gt;<br />
                       </div>
-        </td>
-        <td class="xmldoc">
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '106', 106)" onmouseover="showTip(event, '106', 106)">
-            Unit(function)
-          </code>
-          <div class="tip" id="106">
-            <strong>Signature:</strong> function:Func&lt;IEnumerable&lt;&#39;TResult&gt;&gt; -&gt; Func&lt;IEnumerable&lt;Try&lt;&#39;TResult&gt;&gt;&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '107', 107)" onmouseover="showTip(event, '107', 107)">
-            Unit(function)
-          </code>
-          <div class="tip" id="107">
-            <strong>Signature:</strong> function:Func&lt;&#39;TArgument,&#39;TResult&gt; -&gt; Func&lt;Try&lt;&#39;TArgument&gt;,Try&lt;&#39;TResult&gt;&gt;<br />
-                          <strong>Type parameters:</strong> 'TResult          </div>
         </td>
         <td class="xmldoc">
           
@@ -272,8 +244,8 @@
             Unit(function)
           </code>
           <div class="tip" id="108">
-            <strong>Signature:</strong> function:Func&lt;&#39;TArgument,int,&#39;TResult&gt; -&gt; Func&lt;Try&lt;&#39;TArgument&gt;,int,Try&lt;&#39;TResult&gt;&gt;<br />
-                          <strong>Type parameters:</strong> 'TResult          </div>
+            <strong>Signature:</strong> function:Func&lt;IEnumerable&lt;&#39;TResult&gt;&gt; -&gt; Func&lt;IEnumerable&lt;Try&lt;&#39;TResult&gt;&gt;&gt;<br />
+                      </div>
         </td>
         <td class="xmldoc">
           
@@ -286,6 +258,34 @@
             Unit(function)
           </code>
           <div class="tip" id="109">
+            <strong>Signature:</strong> function:Func&lt;&#39;TArgument,&#39;TResult&gt; -&gt; Func&lt;Try&lt;&#39;TArgument&gt;,Try&lt;&#39;TResult&gt;&gt;<br />
+                          <strong>Type parameters:</strong> 'TResult          </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '110', 110)" onmouseover="showTip(event, '110', 110)">
+            Unit(function)
+          </code>
+          <div class="tip" id="110">
+            <strong>Signature:</strong> function:Func&lt;&#39;TArgument,int,&#39;TResult&gt; -&gt; Func&lt;Try&lt;&#39;TArgument&gt;,int,Try&lt;&#39;TResult&gt;&gt;<br />
+                          <strong>Type parameters:</strong> 'TResult          </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '111', 111)" onmouseover="showTip(event, '111', 111)">
+            Unit(function)
+          </code>
+          <div class="tip" id="111">
             <strong>Signature:</strong> function:Func&lt;&#39;TArgument,IEnumerable&lt;&#39;TResult&gt;&gt; -&gt; Func&lt;Try&lt;&#39;TArgument&gt;,IEnumerable&lt;Try&lt;&#39;TResult&gt;&gt;&gt;<br />
                           <strong>Type parameters:</strong> 'TResult          </div>
         </td>

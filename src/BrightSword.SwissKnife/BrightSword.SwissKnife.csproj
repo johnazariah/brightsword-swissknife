@@ -52,6 +52,7 @@
     <Compile Include="CommandLineUtilities\CommandLineApplication.cs" />
     <Compile Include="CommandLineUtilities\CommandLineApplicationAttribute.cs" />
     <Compile Include="CommandLineUtilities\CommandLineArgumentAttribute.cs" />
+    <Compile Include="CommandLineUtilities\CommandLineArgumentProcessor.cs" />
     <Compile Include="CommandLineUtilities\CommandLineParameterException.cs" />
     <Compile Include="CommandLineUtilities\ICommandLineParams.cs" />
     <Compile Include="Disposable.cs" />

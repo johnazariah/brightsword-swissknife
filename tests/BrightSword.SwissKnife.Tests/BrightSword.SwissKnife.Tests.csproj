@@ -48,6 +48,7 @@
     <Compile Include="ByteArrayReverseTests.cs" />
     <Compile Include="CoerceExtensionTests.cs" />
     <Compile Include="CommandLineArgumentHelperTests.cs" />
+    <Compile Include="CommandLineArgumentParserTests.cs" />
     <Compile Include="CustomAttributeValueTests.cs" />
     <Compile Include="DisposableTests.cs" />
     <Compile Include="EnumerableExtensionTests.cs" />
@@ -72,12 +73,6 @@
     <Compile Include="ObjectDescriberTests.cs" />
     <Compile Include="YCombinatorTests.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\BrightSword.SwissKnife\BrightSword.SwissKnife.csproj">
-      <Project>{0297e49a-8b8c-4055-8799-9fdf7c83237e}</Project>
-      <Name>BrightSword.SwissKnife</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -92,5 +87,11 @@
       <Private>True</Private>
       <Paket>True</Paket>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\BrightSword.SwissKnife\BrightSword.SwissKnife.csproj">
+      <Project>{0297e49a-8b8c-4055-8799-9fdf7c83237e}</Project>
+      <Name>BrightSword.SwissKnife</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

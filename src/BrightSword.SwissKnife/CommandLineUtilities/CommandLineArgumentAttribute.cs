@@ -19,34 +19,9 @@ namespace BrightSword.SwissKnife
         private const BindingFlags C_BINDING_FLAGS =
             BindingFlags.Instance | BindingFlags.IgnoreCase | BindingFlags.NonPublic | BindingFlags.Public;
 
-        private bool _flag;
-
-        internal CommandLineArgumentAttribute(string name, string description, bool flag)
+        internal static CommandLineArgumentAttribute Flag(string name, string description)
         {
-            Name = name;
-            Description = description;
-            IsFlag = flag;
-        }
-
-        /// <summary>
-        ///     Specifies the property to be a mandatory command-line argument. When the argument is specified on the command line,
-        ///     the caller must provide an appropriate value for the argument
-        /// </summary>
-        /// <param name="name"> The name of the argument string specified on the command line, without the '--' </param>
-        /// <param name="description"> The description of the argument </param>
-        /// <example>
-        ///     <code>[CommandLineArgument("database", "The full path and name of the database")]
-        ///     public string DatabasePath { get; set; }</code>
-        ///     will require the application include a command-line argument of the form --database=somevalue If the command-line
-        ///     argument is to be a flag, (i.e without a value specified), use this constructor and provide the named parameter
-        ///     'IsFlag'
-        ///     <code>[CommandLineArgument("clobber", "Flag argument specifying if the database should be clobbered", IsFlag = true)]
-        ///                                                                                                                                                                                                                                                                                                  public bool Clobber { get; set; }</code>
-        /// </example>
-        public CommandLineArgumentAttribute(string name, string description)
-        {
-            Name = name;
-            Description = description;
+            return new CommandLineArgumentAttribute(name, description) {IsFlag = true};
         }
 
         /// <summary>
@@ -73,19 +48,17 @@ namespace BrightSword.SwissKnife
         ///         public bool Clobber { get; set; }
         ///     </code>
         /// </example>
-        public CommandLineArgumentAttribute(string name, string description, object defaultValue)
-            : this(name, description)
+        public CommandLineArgumentAttribute(string name, string description, object defaultValue = null)
         {
+            Name = name;
+            Description = description;
             DefaultValue = defaultValue;
-
-            // if a default value has been provided, then it's not optional
-            IsOptional |= (defaultValue != null);
         }
 
         /// <summary>
         ///     Can be used as a named parameter to specify that the argument is optional
         /// </summary>
-        public bool IsOptional { get; set; }
+        public bool IsOptional => IsFlag || (DefaultValue != null);
 
         /// <summary>
         ///     Can be used as a named parameter to specify that the argument is a flag and requires no value. Flags are always
@@ -99,19 +72,7 @@ namespace BrightSword.SwissKnife
         ///     [True] *** The effective value of --create is [True] This effectively means that --create will result in the same
         ///     behaviour whether it is specified or not!
         /// </example>
-        public bool IsFlag
-        {
-            get { return _flag; }
-            set
-            {
-                _flag = value;
-                if (_flag)
-                {
-                    // flags are optional always
-                    IsOptional = true;
-                }
-            }
-        }
+        public bool IsFlag { get; set; }
 
         internal string Name { get; set; }
         internal string Description { get; set; }

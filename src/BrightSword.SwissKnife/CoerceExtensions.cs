@@ -29,21 +29,7 @@ namespace BrightSword.SwissKnife
             if ((value is string)
                 && (targetType == typeof (bool)))
             {
-                var stringValue = value.ToString();
-
-                if (string.IsNullOrEmpty(stringValue)) { return false; }
-
-                if (stringValue.Equals("y", StringComparison.InvariantCultureIgnoreCase)
-                    || stringValue.Equals("True", StringComparison.InvariantCultureIgnoreCase)) {
-                        return true;
-                    }
-
-                if (stringValue.Equals("n", StringComparison.InvariantCultureIgnoreCase)
-                    || stringValue.Equals("False", StringComparison.InvariantCultureIgnoreCase)) {
-                        return false;
-                    }
-
-                throw new ArgumentException("Boolean should be either 'y' or 'n'");
+                return ParseBooleanSpecial(value.ToString());
             }
 
             object result;
@@ -111,10 +97,23 @@ namespace BrightSword.SwissKnife
             }
         }
 
+        private static bool ParseBooleanSpecial(string stringValue)
+        {
+            if (string.IsNullOrEmpty(stringValue)) { return false; }
+
+            if (stringValue.Equals("y", StringComparison.InvariantCultureIgnoreCase)
+                || stringValue.Equals("True", StringComparison.InvariantCultureIgnoreCase)) { return true; }
+
+            if (stringValue.Equals("n", StringComparison.InvariantCultureIgnoreCase)
+                || stringValue.Equals("False", StringComparison.InvariantCultureIgnoreCase)) { return false; }
+
+            throw new ArgumentException("Boolean should be either 'y' or 'n'");
+        }
+
         /// <summary>
         ///     Tries to coerce the value contained in <paramref name="value" /> to the specified <paramref name="targetType" /> ,
         ///     passing back the coerced value in
-        ///     <param
+        ///     <paramref
         ///         name="returnValue" />
         ///     Utility function to streamline coercion to CLR types.
         /// </summary>
@@ -160,7 +159,7 @@ namespace BrightSword.SwissKnife
         /// <summary>
         ///     Tries to coerce the value contained in <paramref name="value" /> to the specified <paramref name="targetType" /> ,
         ///     passing back the coerced value in
-        ///     <param
+        ///     <paramref
         ///         name="returnValue" />
         /// </summary>
         /// <param name="value">
@@ -192,8 +191,8 @@ namespace BrightSword.SwissKnife
             Func<Type, object, object> parseFunc,
             object defaultValue)
         {
-            var defaultReturnValue = ((defaultValue != null) && defaultValue.GetType()
-                                                                            .IsAssignableFrom(targetType))
+            var defaultReturnValue = (defaultValue?.GetType()
+                                                   .IsAssignableFrom(targetType) ?? false)
                                          ? defaultValue
                                          : targetType.IsValueType
                                                ? Activator.CreateInstance(targetType)

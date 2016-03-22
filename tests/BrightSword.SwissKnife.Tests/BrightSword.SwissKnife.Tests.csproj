@@ -48,6 +48,7 @@
     <Compile Include="ByteArrayReverseTests.cs" />
     <Compile Include="CoerceExtensionTests.cs" />
     <Compile Include="CommandLineArgumentHelperTests.cs" />
+    <Compile Include="CommandLineArgumentParserTests.cs" />
     <Compile Include="CustomAttributeValueTests.cs" />
     <Compile Include="DisposableTests.cs" />
     <Compile Include="EnumerableExtensionTests.cs" />

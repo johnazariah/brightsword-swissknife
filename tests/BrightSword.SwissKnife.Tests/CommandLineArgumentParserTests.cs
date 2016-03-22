@@ -1,3 +1,4 @@
+using System;
 using BrightSword.SwissKnife;
 using NUnit.Framework;
 
@@ -34,6 +35,7 @@ namespace Tests.BrightSword.SwissKnife
                         };
 
             var parsedArguments = input.ParseArguments<SimpleProperties>();
+            Assert.IsTrue(parsedArguments.IsValidCommandLineParameterSet());
 
             Assert.AreEqual("John", parsedArguments.Name);
             Assert.AreEqual(99, parsedArguments.Age);
@@ -47,8 +49,20 @@ namespace Tests.BrightSword.SwissKnife
                         };
 
             var parsedArguments = input.ParseArguments<PropertiesWithDefaultValue>();
+            Assert.IsTrue(parsedArguments.IsValidCommandLineParameterSet());
 
             Assert.AreEqual(100.0M, parsedArguments.BankBalance);
+
+            Console.Write(parsedArguments.Usage());
+//            Assert.AreEqual(@"*** [Usage]
+//***	 [--bank-balance=<value>] : the bank balance
+//***
+//***
+//*** [Defaults]
+//***		 --bank-balance has a default value of [100]
+//***
+//*** [Effective Values]
+//***		 The effective value of --bank-balance is [100]", parsedArguments.Usage());
         }
 
         [Test]
@@ -61,6 +75,7 @@ namespace Tests.BrightSword.SwissKnife
                         };
 
             var parsedArguments = input.ParseArguments<PropertiesWithFlag>();
+            Assert.IsTrue(parsedArguments.IsValidCommandLineParameterSet());
 
             Assert.AreEqual(true, parsedArguments.AFlag);
         }

@@ -78,11 +78,18 @@ namespace BrightSword.SwissKnife
         internal string Description { get; set; }
         internal object DefaultValue { get; set; }
 
-        internal string ArgumentDescriptor => string.Format(
-            IsOptional
-                ? "[{0}]"
-                : "{0}",
-            $"--{Name}{(IsFlag ? "" : "=<value>")}");
+        internal string ArgumentDescriptor
+        {
+            get
+            {
+                var valueString = (IsFlag ? string.Empty : "=<value>");
+                var nameValueString = $"--{Name}{valueString}";
+                return IsOptional
+                           ? $"[{nameValueString}]"
+                           : nameValueString;
+
+            }
+        }
 
         internal string PropertyName { get; set; }
         internal Type ParamType { get; set; }

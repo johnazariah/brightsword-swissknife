@@ -112,19 +112,19 @@ namespace BrightSword.SwissKnife
                     let argumentName = claa?.Name ?? property.Name
                     let argumentType = claa?.ParamType ?? property.PropertyType
                     let description = claa?.Description ?? ""
-                    let isOptional = claa?.IsOptional ?? false
+                    let optionStr = claa?.IsOptional == true ? "Optional" : "Mandatory"
                     let isFlag = claa?.IsFlag ?? false
                     let defaultValue = claa?.DefaultValue
                     let effectiveValue = property.GetValue(_this, null)
                     let argumentDescriptor = claa?.ArgumentDescriptor ?? $"--{property.Name}=<value>"
-                    let usageStr = $"***\t {argumentDescriptor,-18} : {isOptional}{description}"
+                    let usageStr = $"***\t {argumentDescriptor,-18} : ({optionStr}) : {description}"
                     let defaultValueStr = $"***\t\t --{argumentName} has a default value of [{defaultValue}]"
                     let effectiveValueStr = $"***\t\t The effective value of --{argumentName} is [{effectiveValue}]"
                     let enumValuesStr = claa?.ParamType.Maybe(
                         _ => _.IsEnum
                             ? $"***\t\t --{argumentName} should be one of [{string.Join(", ", Enum.GetNames(_))}]"
                             : "",
-                        "")
+                        "***")
                     select new
                     {
                         UsageString = usageStr,
@@ -133,22 +133,26 @@ namespace BrightSword.SwissKnife
                         EnumValuesString = enumValuesStr
                     }).ToList();
 
-                var usageString = string.Join("\n", strings.Select(_ => _.UsageString));
-                var enumValuesString = string.Join("\n", strings.Select(_ => _.EnumValuesString));
-                var defaultValuesString = string.Join("\n", strings.Select(_ => _.DefaultValueString));
-                var effectiveValuesString = string.Join("\n", strings.Select(_ => _.EffectiveValueString));
+                var usageString = string.Join("\r\n", strings.Select(_ => _.UsageString).Where(_ => !string.IsNullOrWhiteSpace(_)));
+                var enumValuesString = string.Join("\r\n", strings.Select(_ => _.EnumValuesString).Where(_ => !string.IsNullOrWhiteSpace(_)));
+                var defaultValuesString = string.Join("\r\n", strings.Select(_ => _.DefaultValueString).Where(_ => !string.IsNullOrWhiteSpace(_)));
+                var effectiveValuesString = string.Join("\r\n", strings.Select(_ => _.EffectiveValueString).Where(_ => !string.IsNullOrWhiteSpace(_)));
 
                 return
                     $@"
-*** [Usage]
+***
+*** Usage:
+***
 {usageString}
 ***
 {enumValuesString}
 ***
-*** [Defaults]
+*** Defaults:
+***
 {defaultValuesString}
 ***
-*** [Effective Values]
+*** Effective Values:
+***
 {effectiveValuesString}
 ";
 

@@ -48,13 +48,7 @@
     <Compile Include="CodeGenerationUtilities.cs" />
     <Compile Include="CoerceExtensions.cs" />
     <Compile Include="AttributeExtensions.cs" />
-    <Compile Include="CommandLineUtilities\CommandLineArgumentHelper.cs" />
-    <Compile Include="CommandLineUtilities\CommandLineApplication.cs" />
-    <Compile Include="CommandLineUtilities\CommandLineApplicationAttribute.cs" />
-    <Compile Include="CommandLineUtilities\CommandLineArgumentAttribute.cs" />
-    <Compile Include="CommandLineUtilities\CommandLineArgumentProcessor.cs" />
-    <Compile Include="CommandLineUtilities\CommandLineParameterException.cs" />
-    <Compile Include="CommandLineUtilities\ICommandLineParams.cs" />
+    <Compile Include="CommandLineArgumentProcessor.cs" />
     <Compile Include="Disposable.cs" />
     <Compile Include="Monads\Try.cs" />
     <Compile Include="Reflection\TypeMemberDiscoverer.cs" />

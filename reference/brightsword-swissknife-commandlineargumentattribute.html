@@ -40,11 +40,7 @@
   <span>Namespace: BrightSword.SwissKnife</span><br />
 </p>
 <div class="xmldoc">
-</br><p class='summary'>
-                Use this attribute to mark individual properties on an implementation of ICommandLineParams. This is used to bind
-                command-line parameters provided to individual, strongly-typed properties on the object. This attribute can mark up
-                either properties (suggested usage) or fields (legacy style)
-            </p></div>
+</div>
   <h3>Constructors</h3>
   <table class="table table-bordered member-list">
     <thead>
@@ -54,19 +50,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '21', 21)" onmouseover="showTip(event, '21', 21)">
+          <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
             new(name, description, defaultValue)
           </code>
-          <div class="tip" id="21">
+          <div class="tip" id="15">
             <strong>Signature:</strong> (name:string * description:string * defaultValue:obj) -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-          </br><p class='summary'>
-                Specifies the property to be a (possibly) optional command-line argument. When the argument is specified on the
-                command line, the caller may provide an value for the argument If no argument is specified, the default argument
-                specified here will be applied.
-            </p>
+          
         </td>
       </tr>
     </tbody>
@@ -80,34 +72,57 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
-            IsFlag()
+          <code onmouseout="hideTip(event, '16', 16)" onmouseover="showTip(event, '16', 16)">
+            DefaultValue()
           </code>
-          <div class="tip" id="22">
+          <div class="tip" id="16">
             <strong>Signature:</strong> unit -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-          </br><p class='summary'>
-                Can be used as a named parameter to specify that the argument is a flag and requires no value. Flags are always
-                optional, so setting this to true will also set IsOptional to true.
-            </p>
+          
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
-            IsOptional
+          <code onmouseout="hideTip(event, '17', 17)" onmouseover="showTip(event, '17', 17)">
+            Description()
           </code>
-          <div class="tip" id="23">
-            <strong>Signature:</strong> bool<br />
+          <div class="tip" id="17">
+            <strong>Signature:</strong> unit -&gt; unit<br />
                       </div>
         </td>
         <td class="xmldoc">
-          </br><p class='summary'>
-                Can be used as a named parameter to specify that the argument is optional
-            </p>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
+            IsFlag()
+          </code>
+          <div class="tip" id="18">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '19', 19)" onmouseover="showTip(event, '19', 19)">
+            Name()
+          </code>
+          <div class="tip" id="19">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
         </td>
       </tr>
     </tbody>

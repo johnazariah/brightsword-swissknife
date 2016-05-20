@@ -2,3 +2,5 @@
 * Moved Source Code Root to GitHub (http://www.github.com/johnazariah/brightsword-swissknife)
 ### 1.0.45 - Mar 22 2016
 * Introduced more modern command line argument processor
+### 1.0.46 - May 20 2016
+* Improved command line argument processor

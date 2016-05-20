@@ -9,20 +9,26 @@ namespace Tests.BrightSword.SwissKnife
     {
         private class SimpleProperties
         {
+            // ReSharper disable UnusedAutoPropertyAccessor.Local
             public string Name { get; set; }
             public int Age { get; set; }
+            // ReSharper restore UnusedAutoPropertyAccessor.Local
         }
 
         private class PropertiesWithFlag
         {
+            // ReSharper disable UnusedAutoPropertyAccessor.Local
             [CommandLineArgument("a-flag", "a flag", IsFlag = true)]
             public bool AFlag { get; set; }
+            // ReSharper restore UnusedAutoPropertyAccessor.Local
         }
 
         private class PropertiesWithDefaultValue
         {
+            // ReSharper disable UnusedAutoPropertyAccessor.Local
             [CommandLineArgument("bank-balance", "the bank balance", 100.0)]
             public decimal BankBalance { get; set; }
+            // ReSharper restore UnusedAutoPropertyAccessor.Local
         }
 
         [Test]
@@ -50,7 +56,7 @@ namespace Tests.BrightSword.SwissKnife
             var parsedArguments = input.ParseArguments<PropertiesWithDefaultValue>();
             Assert.IsTrue(parsedArguments.IsValidCommandLineParameterSet());
 
-            Assert.AreEqual(100.0M, parsedArguments.BankBalance);            
+            Assert.AreEqual(100.0M, parsedArguments.BankBalance);
         }
 
         [Test]
@@ -69,38 +75,6 @@ namespace Tests.BrightSword.SwissKnife
         }
 
         [Test]
-        public void Test_ShouldProduceTheRightUsageString_Optional()
-        {
-            var input = new string[]
-            {};
-
-            var parsedArguments = input.ParseArguments<PropertiesWithDefaultValue>();
-            Console.Write(parsedArguments.Usage());
-            const string expected = @"
-***
-*** Usage:
-***
-***	 [--bank-balance=<value>] : (Optional) : the bank balance
-***
-***
-***
-*** Defaults:
-***
-***		 --bank-balance has a default value of [100]
-***
-*** Effective Values:
-***
-***		 The effective value of --bank-balance is [100]";
-            var actual = parsedArguments.Usage();
-
-            Assert.AreEqual(
-                expected.Replace("\r", string.Empty)
-                        .Replace("\n", string.Empty),
-                actual.Replace("\r", string.Empty)
-                      .Replace("\n", string.Empty));
-        }
-
-        [Test]
         public void Test_ShouldProduceTheRightUsageString_NoAttribute()
         {
             var input = new string[]
@@ -115,7 +89,9 @@ namespace Tests.BrightSword.SwissKnife
 ***	 --Name=<value>     : (Mandatory) : 
 ***	 --Age=<value>      : (Mandatory) : 
 ***
-
+*** Enumerations:
+***
+***
 ***
 *** Defaults:
 ***
@@ -125,14 +101,50 @@ namespace Tests.BrightSword.SwissKnife
 *** Effective Values:
 ***
 ***		 The effective value of --Name is []
-***		 The effective value of --Age is [0]";
+***		 The effective value of --Age is [0]
+***";
             var actual = parsedArguments.Usage();
 
             Assert.AreEqual(
                 expected.Replace("\r", string.Empty)
-                        .Replace("\n", string.Empty),
+                    .Replace("\n", string.Empty),
                 actual.Replace("\r", string.Empty)
-                      .Replace("\n", string.Empty));
+                    .Replace("\n", string.Empty));
+        }
+
+        [Test]
+        public void Test_ShouldProduceTheRightUsageString_Optional()
+        {
+            var input = new string[]
+            {};
+
+            var parsedArguments = input.ParseArguments<PropertiesWithDefaultValue>();
+            Console.Write(parsedArguments.Usage());
+            const string expected = @"
+***
+*** Usage:
+***
+***	 [--bank-balance=<value>] : (Optional) : the bank balance
+***
+*** Enumerations:
+***
+***
+***
+*** Defaults:
+***
+***		 --bank-balance has a default value of [100]
+***
+*** Effective Values:
+***
+***		 The effective value of --bank-balance is [100]
+***";
+            var actual = parsedArguments.Usage();
+
+            Assert.AreEqual(
+                expected.Replace("\r", string.Empty)
+                    .Replace("\n", string.Empty),
+                actual.Replace("\r", string.Empty)
+                    .Replace("\n", string.Empty));
         }
     }
 }
